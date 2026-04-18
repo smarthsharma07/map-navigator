@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Map Navigator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decorations">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="glass-header">
+            <h1>Map Navigator</h1>
+            <p>Find the shortest path using Breadth-First Search</p>
+        </header>
+
+        <div class="layout-grid">
+            <!-- Left Side: Controls & Results -->
+            <div class="left-panel">
+                <section class="glass-card controls-section">
+                    <div class="input-group">
+                        <label for="source">Select Starting Point</label>
+                        <select id="source">
+                            <option value="" disabled selected>Loading locations...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="destination">Select Destination</label>
+                        <select id="destination">
+                            <option value="" disabled selected>Loading locations...</option>
+                        </select>
+                    </div>
+
+                    <button id="navigate-btn" class="primary-btn">Navigate Path</button>
+                </section>
+
+                <section class="glass-card result-section" id="result-container" style="display: none;">
+                    <h2>Route Found</h2>
+                    <div class="path-metrics" id="path-metrics"></div>
+                    <div class="timeline" id="path-timeline">
+                        <!-- Path nodes will be injected here via JS -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Side: SVG Graph Map -->
+            <div class="right-panel">
+                <section class="glass-card map-section">
+                    <h2>Live Map Visualization</h2>
+                    <div class="svg-container">
+                        <!-- viewBox allows responsiveness -->
+                        <svg id="campus-map" viewBox="0 0 900 600" preserveAspectRatio="xMidYMid meet">
+                            <!-- Edges (lines) drawn first so they are behind nodes -->
+                            <g id="edges-layer"></g>
+                            <!-- Highlights (path) drawn over edges -->
+                            <g id="highlight-layer"></g>
+                            <!-- Nodes (circles and text) on top -->
+                            <g id="nodes-layer"></g>
+                        </svg>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

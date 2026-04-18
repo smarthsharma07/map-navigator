@@ -1,0 +1,26 @@
+# Compiled C++ executables
+*.exe
+*.out
+*.app
+
+# Python virtual environment and cache
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Secure files
+.env
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
