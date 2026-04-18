@@ -23,7 +23,6 @@ The system finds the shortest path between locations in an unweighted campus gra
 backend/    -> C++ DSA logic
 api/        -> Flask API
 frontend/   -> HTML and JavaScript
-report/     -> Project report
 ```
 
 ## Algorithm Used
